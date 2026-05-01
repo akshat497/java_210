@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* group selectors  */
+      /* h1,p{
+            color: red;
+        } */
+      /* *{
+            color: red;
+            margin: 10px;
+            padding: 10px;
+            background-color: aqua;
+            border: 2px solid black;
+         }
+         h1{
+            color: green;
+         }
+         p{
+            color: blue
+         } */
+      .first {
+        color: red;
+        margin: 10px;
+        padding: 10px;
+        background-color: aqua;
+        border: 2px solid black;
+      }
+      #fourth {
+        color: green;
+        font-size: larger;
+      }
+      div h1 {
+        color: blue;
+      }
+      #second > p {
+        color: red;
+      }
+      input[type="password"] {
+        background-color: aqua;
+        border: 2px solid black;
+      }
+      input[disabled] {
+        background-color: blue;
+      }
+      .box{
+        height: 100px;
+        width: 200px;
+        background-color: aqua  ;
+        border: 2px solid black;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content:space-around
+       
+       
+      }
+
+      .child{
+        height: 10px;
+        width: 10px;
+        background-color: red;
+        border: 2px solid black;
+        margin: 10px;
+        padding: 10px;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Hello, World!</h1>
+      <h1>Hello, World!</h1>
+        <h1>Hello, World!</h1>
+          <h1>Hello, World!</h1>
+          <p>Hello, World!</p> -->
+
+    <!-- <div class="first">
+           First
+          </div>
+          <div class="first">
+            Second
+          </div>
+          <div class="first">
+           Third
+          </div> -->
+
+    <!-- //display types in css -->
+
+    <!-- inline
+          inline block
+          flex
+          block  -->
+  
+
+    <div>
+      <!--is parent-->
+      <div>
+        <div>
+          <h1>hello</h1>
+        </div>
+      </div>
+      <h1>Hello, World!</h1>
+      <p>Hello, World!</p>
+    </div>
+
+    <div id="second">
+      <p>hello</p>
+      <div>
+        <p>hello</p>
+      </div>
+    </div>
+
+    <input type="text" disabled />
+    <input type="password" />
+
+    <div id="div1" class="box">
+      <div class="child">
+      
+      </div>
+      <div class="child">
+       
+      </div>
+     
+    </div>
+    <div id="div2" class="box" >i am div 2</div>
+    <div id="div3" class="box" >i am div 3</div>
+    <div id="div4" class="box" >i am div 4</div>
+    
+  
+  </body>
+</html>
