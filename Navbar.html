@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar,.div1,.div2,.div3{
+            display: flex;
+        }
+        .navbar{
+            justify-content: space-between;
+            background-color: black;
+            color: aliceblue;
+            padding: 10px;
+            align-items: center;
+
+        }
+        *{
+            margin: 0;
+        }
+        .div1{
+            gap: 5px;
+
+        }
+        .div2{
+            gap: 10px;
+        
+        }
+        .div3{
+            gap: 10px;
+        }
+        .navbar input{
+            width: 250px;
+            border-radius: 10px;
+            border: none;
+           height: 20px;
+        }
+        #button,#notification,#profile{
+            padding: 5px;
+            border-radius: 10px;
+            background-color: rgb(100, 96, 96);
+
+        }
+        #profile{
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            /* background: url(); */
+
+
+        }
+
+    </style>
+</head>
+<body>
+
+   <div  class="navbar">
+     <div class="div1">
+        <div>Logo</div>
+        <div>Premium</div>
+    </div>
+    <div class="div2">
+        <div><input type="search"></div>
+        <div>Microphone</div>
+    </div>
+    <div class="div3">
+        <div id="button">+ Create</div>
+        <div id="notification">Notification</div>
+        <div id="profile"><center>P</center></div>
+    </div>
+   </div>
+    
+</body>
+</html>
