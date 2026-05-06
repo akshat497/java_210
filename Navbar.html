@@ -1,75 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .navbar,.div1,.div2,.div3{
-            display: flex;
-        }
-        .navbar{
-            justify-content: space-between;
-            background-color: black;
-            color: aliceblue;
-            padding: 10px;
-            align-items: center;
+      .navbar,
+      .div1,
+      .div2,
+      .div3 {
+        display: flex;
+      }
+      .navbar {
+        justify-content: space-between;
+        background-color: rgb(131, 130, 130);
+        color: aliceblue;
+        padding: 10px;
+        align-items: center;
+        position: sticky;
+        top:0
+      }
+      * {
+        margin: 0;
+      }
+      .div1 {
+        gap: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .div2 {
+        gap: 5px;
+         display: flex;
+        align-items: center;
+      }
+      .div3 {
+        gap: 10px;
+      }
+      .navbar input {
+        width: 250px;
+        border-radius: 10px;
+        border: none;
+        height: 20px;
+      }
+      #button,
+      #notification,
+      #profile {
+        padding: 5px;
+        border-radius: 10px;
+        background-color: rgb(100, 96, 96);
+      }
+      #profile {
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        /* background: url(); */
+      }
+      #microphoneHolder{
+        cursor: pointer;
+          padding: 4px;
+        border-radius: 10px;
+        background-color: rgb(100, 96, 96);
+      
+      }
+      .sidebar {
+        height: 100vh;
+        width: 6%;
+        background-color: rgb(131, 130, 130);
+        border-top: 1px solid black;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-self: start;
+        padding: 10px;
+     
+       
+      
 
-        }
-        *{
-            margin: 0;
-        }
-        .div1{
-            gap: 5px;
-
-        }
-        .div2{
-            gap: 10px;
+      }
+      .content{
+        height: 100vh;
+        width: 92%;
         
-        }
-        .div3{
-            gap: 10px;
-        }
-        .navbar input{
-            width: 250px;
-            border-radius: 10px;
-            border: none;
-           height: 20px;
-        }
-        #button,#notification,#profile{
-            padding: 5px;
-            border-radius: 10px;
-            background-color: rgb(100, 96, 96);
-
-        }
-        #profile{
-            border-radius: 50%;
-            height: 20px;
-            width: 20px;
-            /* background: url(); */
+        justify-self: right;
+        display:grid ;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+        margin-top: 2%;
 
 
-        }
+      }
+      .box{
+        height: 180px;
+        width: 230px;
+        background-color: bisque;
+        border: 2px solid black;
+        margin: 10px;
+        transition: all 0.7s;
+      }
+      .box:hover{
+        transform: scale(1.1);
 
+
+      }
     </style>
-</head>
-<body>
-
-   <div  class="navbar">
-     <div class="div1">
-        <div>Logo</div>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="div1">
+        <div>
+          <img src="./ytLogo.png" alt="youtube" height="30" width="40" />
+        </div>
         <div>Premium</div>
-    </div>
-    <div class="div2">
-        <div><input type="search"></div>
-        <div>Microphone</div>
-    </div>
-    <div class="div3">
+      </div>
+      <div class="div2">
+        <div><input type="search" /></div>
+        <div id="microphoneHolder"><img src="./ytMicro.png" alt="mic"
+             height="15" width="15" /></div>
+      </div>
+      <div class="div3">
         <div id="button">+ Create</div>
         <div id="notification">Notification</div>
         <div id="profile"><center>P</center></div>
+      </div>
+
     </div>
-   </div>
-    
-</body>
+    <div class="sidebar">
+      <div>Home</div>
+      <div>Shorts</div>
+      
+      <div>Library</div>
+      <div>History</div>
+    </div>
+    <div class="content">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+       <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
 </html>
