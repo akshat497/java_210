@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input:disabled {
+        background-color: rgb(203, 200, 200);
+      }
+      a:visited {
+        color: red;
+      }
+      a:link {
+        color: green;
+      }
+      input:focus {
+        outline-color: red;
+      }
+      ul :first-child {
+        background-color: aqua;
+      }
+      ul :last-child {
+        background-color: red;
+      }
+      /* ul :nth-child(2){
+            background-color: blue;
+        } */
+
+      /* ul :nth-child(odd){
+            background-color: aqua;
+        }
+        ul :nth-child(even){
+            background-color: red;
+        } */
+
+      input:not(disabled) {
+        background-color: aqua;
+        accent-color: black;
+        padding: 10px;
+      }
+      input:checked {
+        accent-color: rgb(197, 6, 6);
+        transform: scale(1.2);
+      }
+      input:required {
+        background-color: beige;
+      }
+      p::before {
+        content: " akshat ";
+      }
+      p:hover::after {
+        content: " ----> ";
+      }
+      p::first-letter {
+        color: red;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: xx-large;
+        font-weight: bolder;
+      }
+      p::first-line {
+        color: green;
+      }
+      ::selection {
+        background: yellow;
+        color: black;
+      }
+      input::placeholder{
+        background-color: black;
+        
+      }
+      a{
+        position: relative;
+        text-decoration: none;
+      }
+      a::after{
+        content: "";
+        width: 0;
+        position: absolute;
+        height: 2px;
+        background: red;
+        bottom: 0;
+        right: 0;
+        transition: 0.5s;
+
+
+      }
+      a:hover::after{
+        width: 100%;
+      }
+      li:hover:nth-child(odd)::before{
+        content: " * ";
+        background-color: red;
+        height: 2px;
+        width: 12px;
+        border-radius: 50%;
+
+      }
+      li:hover:nth-child(even)::before{
+         content: " * ";
+        background-color: green;
+        height: 2px;
+        width: 12px;
+        border-radius: 50%;
+
+      }
+      button:active{
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <button>i am button</button>
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="checkbox" />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" disabled />
+    <a href="https://www.google.com">google</a>
+    <a href="https://www.youtube.com" target="_blank">Youtube</a>
+    <p>
+      hello Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure
+      quaerat tempore laborum cum amet animi id necessitatibus, repellat
+      molestias! Maiores ipsum ex ea. Laboriosam illum, rerum tempora nulla
+      atque sunt.
+    </p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <ul>
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li>fourth</li>
+      <li>fifth</li>
+      <li>sixth</li>
+    </ul>
+
+    <form>
+      <input type="text" placeholder="Enter username" required />
+      <input type="text" placeholder="Enter name" />
+      <input type="submit" />
+    </form>
+
+    <ol>
+        <li>-11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>0</li>
+        <li>45</li>
+    </ol>
+  </body>
+</html>
