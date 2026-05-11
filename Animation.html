@@ -131,14 +131,15 @@
         padding: 2%;
         height: max-content;
         width: max-content;
-        animation: swing 4s ease-in-out infinite alternate;
+          transform-origin: top center;
+        animation: swing 2s ease-in-out infinite ;
       }
      
       @keyframes swing {
 
-        from{transform: rotate(50DEG);}
+        from{transform: rotate(40DEG);}
         to{
-            transform: rotate(-50DEG);
+            transform: rotate(-40DEG);
         }
       }
       #balls{
@@ -149,17 +150,17 @@
         position: absolute;
         bottom: 15px;
         right: 0;
-        animation: bounce 2s linear infinite alternate;
-        animation-delay: 2s;
+        animation: bounce 1s ease-in-out infinite ;
+        animation-delay: 1s;
       }
       @keyframes bounce {
         from{transform: translateX(40px)}
-        to{transform: translateX(80px)  translateY(40px)}
+        to{transform: translateX(100px)  translateY(-70px)}
         
       }
       #animationHolder{
         position: relative;
-        border: 2px solid black;
+       
         height: max-content;
         width: max-content;
         display: flex;

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Fade{
+            height: 200px;
+            width: 90%;
+            border: 2px solid black;
+            position: absolute;
+            animation:fadeImage 12s infinite;
+            opacity: 0;
+            
+        }
+         @keyframes fadeImage {
+           0%{
+            opacity: 0;
+           }
+           10%{
+            opacity: 1;
+           }
+           25%{
+            opacity: 1;
+           }
+           35%{
+            opacity: 0;
+           }
+           100%{
+            opacity: 0;
+           }
+            
+        }
+       
+        #holder{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            border: 2px solid red;
+            height: 200px;
+            padding: 2%;
+        }
+       
+    </style>
+</head>
+<body>
+
+   <div id="holder">
+     <div class="Fade" id="first"></div>
+    <div class="Fade" id="second"></div>
+    <div class="Fade" id="third"></div>
+    <div class="Fade" id="fourth"></div>
+    <div class="Fade" id="fifth"></div>
+   </div>
+    
+</body>
+</html>
