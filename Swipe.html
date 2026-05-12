@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swipe Animation</title>
+
+<style>
+
+body{
+    margin:0;
+    overflow:hidden;
+}
+
+.Holder{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    gap:20px;
+}
+
+.image{
+    height:100px;
+    width:100px;
+    background:aquamarine;
+    border:2px solid black;
+
+    opacity:0;
+    transform-origin: center;
+
+    animation: swipe 10s ease-in-out infinite;
+}
+
+/* Equal Delays */
+
+#first{
+    animation-delay:0s;
+    background-color: aliceblue;
+}
+
+#second{
+    animation-delay:1s;
+    background-color: red;
+}
+
+#third{
+    animation-delay:2s;
+    background-color: green;
+}
+
+#fourth{
+    animation-delay:3s;
+    background-color: yellow;
+}
+
+#fifth{
+    animation-delay:4s;
+    background-color: pink;
+}
+
+@keyframes swipe {
+
+    0%{
+        transform:translateX(0) scale(1);
+        opacity:0;
+    }
+
+    50%{
+        transform:translateX(-120px) scale(1.25);
+        opacity:0.5;
+    }
+
+    100%{
+        transform:translateX(-300px) scale(0.9);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="Holder">
+    <div class="image" id="first"></div>
+    <div class="image" id="second"></div>
+    <div class="image" id="third"></div>
+    <div class="image" id="fourth"></div>
+    <div class="image" id="fifth"></div>
+</div>
+
+</body>
+</html>

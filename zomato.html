@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #mobile {
+        height: 500px;
+        width: 250px;
+        border: 2px solid black;
+        border-radius: 40px;
+        padding: 0.5%;
+        background-color: black;
+      }
+      #lining {
+        height: 500px;
+        width: 250px;
+        border: 2px solid black;
+        border-radius: 40px;
+        box-shadow: -10px -10px 0px black;
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+      }
+      #notch {
+        height: 20px;
+        width: 100px;
+        background-color: black;
+        border-radius: 10px;
+        margin-top: 3%;
+      }
+      #HolderMain {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+        background: linear-gradient(
+          180deg,
+          rgb(245, 214, 214),
+          rgb(244, 228, 228),
+          rgb(238, 228, 228)
+        );
+      }
+      #heading {
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: xx-large;
+        font-weight: bolder;
+        color: red;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      #heading:first-child {
+        width: 400px;
+      }
+
+      #subHeading {
+        width: 360px;
+        font-size: medium;
+        font-weight: 800;
+        color: gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #HolderBase{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 200px;
+        
+      }
+      #first div,#third div{
+        height: 100px;
+        width: 100px;
+        background-color: aliceblue;
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px black;
+        
+      }
+      #first,#third{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+
+      }
+      #second{
+        height: 190px;
+        width: 250px;
+        overflow: hidden;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        box-shadow: 10px 10px 10px black;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="HolderMain">
+      <div id="heading">
+        <div>What’s waiting for you</div>
+
+        <div>on the app?</div>
+      </div>
+      <div id="subHeading">
+        <div>Our app is packed with features</div>
+        <div>that enable you to experience food</div>
+        <div>delivery like never before</div>
+      </div>
+      <div id="HolderBase">
+        <div id="first">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="second">
+          <div id="mobile">
+            <div id="lining">
+              <div id="notch"></div>
+            </div>
+          </div>
+        </div>
+        <div id="third">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
