@@ -1,23 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        /* selectors in css  */
-        /* tag selectors
+      /* selectors in css  */
+      /* tag selectors
         id selectors
         class selectors
         group selectors
         attribute selectors
         decendant selectors
         child selectos  */
-        /* div{
+      /* div{
             color:red;
             background-color: antiquewhite; */
-            /* border: 2px solid black; */
-            /* margin: 10px;
+      /* border: 2px solid black; */
+      /* margin: 10px;
             padding: 10px;
             height: 100px;
             width: 100px;
@@ -32,9 +32,9 @@
         .sourabh{
             border: 4px solid red;
         } */
-         /* decendent selector  */
+      /* decendent selector  */
 
-        /* #parent div{
+      /* #parent div{
             height: max-content;
             width: max-content;
             border: 2px solid black;
@@ -43,7 +43,7 @@
 
         } */
 
-        /* #parent > div{
+      /* #parent > div{
               height: max-content;
             width: max-content;
             border: 2px solid black;
@@ -51,17 +51,101 @@
 
 
         } */
-         input[type="text"]{
+      /* input[type="text"]{
             border: 5px solid red;
             border-radius: 10px;
+            background-color: aqua;
 
-         }
-     
+         } */
 
+      /* position in css */
+
+      /* by default position is static  */
+      /* static
+         relative
+         fixed
+         absolute
+         sticky */
+
+      .box {
+        height: 100px;
+        width: 100px;
+        border: 2px solid red;
+        margin: 1%;
+        
+      }
+      .papa{
+        display: flex;
+        gap: 20px;
+        /* flex-direction: row-reverse; */
+        border: 2px solid black;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      #first {
+        position: relative;
+        left: 200px;
+        top: 100px;
+        background-color: black;
+      }
+      #second {
+        position: fixed;
+        background-color: aqua;
+        bottom: 0;
+        right: 0;
+      }
+      #third {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background-color: green;
+      }
+
+      .parent {
+        height: 500px;
+        width: 100%;
+        border: 2px solid black;
+        position: relative;
+      }
+      .child {
+        height: 30px;
+        width: 30px;
+        background-color: red;
+        border: 2px solid green;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+      }
+      
     </style>
-</head>
-<body>
-    <input type="text"><input type="password">
+  </head>
+  <body>
+  <div class="papa">
+      <div class="box" id="child1">i am div 1</div>
+    <div class="box" id="child2">i am div 2</div>
+    <div class="box" id="child3">i am div 3</div>
+    <div class="box" id="child4">i am div 4</div>
+    <div class="box" id="child5">i am div 5</div>
+  </div>
+    <!-- <div class="box" id="5hird">3i am div
+    </div> --5
+    <!-- <div5class="box" id="first"></div5class=> -->
+    <!-- <div class="box" id="second">
+
+    </div> -->
+
+    <!-- <div class="box" id="fourth"></div>
+    <div class="box" id="fifth"></div>
+    <div class="box" id="sixth"></div>
+    <div class="box" id="seventh"></div>
+
+    <div class="parent">
+      <div class="child"></div>
+    </div> -->
+
+    <!-- <input type="text"><input type="password">
     <div id="parent">
         parent
         <div id="child">
@@ -71,7 +155,7 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- <div></div>
     <div></div>
     <div></div>
@@ -81,8 +165,5 @@
     <div class="sourabh"></div>
     <div class="sourabh"></div>
     <div class="sourabh"></div> -->
-
-
-    
-</body>
+  </body>
 </html>
