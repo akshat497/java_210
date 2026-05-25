@@ -552,10 +552,38 @@
       ];
 
       let filteredProducs = products.filter(function (element) {
+        return element.brand == "Samsung";
+      });
+       let foundProducts = products.find(function (element) {
+        return element.brand == "Samsung";
+      });
+       let mappedProducts = products.map(function (element) {
+       
+        return element.price-10000;
+      });
+       let foreach = products.forEach(function (element) {
         return element.brand == "Apple";
       });
+      //what does reduce method do in js?
+      // The reduce method in JavaScript is a powerful array method that allows you to reduce an array to a single value by applying a function to each element of the array. It takes a callback function and an optional initial value as arguments.
+      //  The callback function is executed for each element in the array, and it receives an accumulator (which holds the accumulated result) and the current element being processed. The result of the callback function is assigned back to the accumulator,
+      //  which is then used in the next iteration. If an initial value is provided, it will be used as the starting point for the reduction; otherwise, the first element of the array will be used as the initial value.
+      let reduce = products.reduce(function (accumulator, element) {
+   
+        return accumulator + element.price;
+      }, 0);
+      
+
+
 
       console.log(filteredProducs);
+      console.log(foundProducts);
+      console.log("reduce",reduce);
+
+      console.log("original",products);
+      console.log("mapped",mappedProducts);
+
+      console.log("foreach",foreach);
     </script>
   </body>
 </html>
