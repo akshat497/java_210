@@ -290,11 +290,272 @@
       //  }
       // }
 
-      let array = [22,44,55,11,33,66,77,88,99];
-      console.log(array[3])
-      for(let i=0;i<array.length;i++){
-        console.log(array[i])
-      }
+      // let array = [22,44,55,11,33,66,77,88,99];
+      // console.log(array[3])
+      // for(let i=0;i<array.length;i++){
+      //   console.log(array[i])
+      // }
+
+      // higher order functions are functions that take other functions
+      //  as arguments or return functions as their result. they are used
+      // to abstract away common patterns of code and make it more reusable and composable.
+
+      // function greet(name) {
+      //   return function (message) {
+      //     console.log(`${message}, ${name}!`);
+      //   };
+      // }
+      // const greetAkshat = greet("Akshat");
+      // greetAkshat("Hello"); // Output: Hello, Akshat!
+
+      // function greet(a){
+      //   console.log(a)
+
+      // }
+
+      // function higherOrderFunction(message,func){
+      //   // console.log("inside higher order function",message,func)
+
+      //   func(message);
+      // }
+
+      // higherOrderFunction("hello akshat",greet);
+
+      // function abc(a){ //higher order function
+
+      //   return function(b){
+
+      //     function inner(c){
+      //       console.log(a,b,c)
+      //     }
+      //     return inner
+      //   }
+
+      // }
+      // console.log(abc(5)(10)(15))
+      let array = [22, 44, 55, 11, 33, 66, 77, 88, 99];
+      //push method
+      array.push(100);
+      console.log(array);
+      //pop method
+      array.pop();
+      console.log(array);
+      //shift method
+      array.shift();
+      console.log(array);
+      //unshift method
+      array.unshift(10);
+      console.log(array);
+      //delete method
+      delete array[2];
+      console.log(array);
+      //slice method
+      let newarray = array.slice(1, 5);
+      console.log(newarray);
+      //splice method
+      // array.splice(starting index, number of elements to delete, elements to add)
+      array.splice(0, 3, 5);
+      console.log(array);
+      //filter method
+      // let filteredarray=array.filter((element)=>{
+      //   return element>66
+      // })
+      // let filteredArray=array.filter(function(element,index,arr){
+      //   return element>60
+
+      // })
+      // console.log(filteredArray)
+
+      let products = [
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+        {
+          id: 2,
+          brand: "Apple",
+          model: "iPhone 15",
+          price: 74999,
+          ram: 6,
+          storage: 128,
+          battery: 3349,
+          camera: 48,
+          os: "iOS",
+          inStock: true,
+          rating: 4.8,
+        },
+        {
+          id: 3,
+          brand: "OnePlus",
+          model: "OnePlus 12",
+          price: 64999,
+          ram: 12,
+          storage: 256,
+          battery: 5400,
+          camera: 50,
+          os: "Android",
+          inStock: false,
+          rating: 4.5,
+        },
+        {
+          id: 4,
+          brand: "Xiaomi",
+          model: "Redmi Note 13 Pro",
+          price: 28999,
+          ram: 8,
+          storage: 128,
+          battery: 5100,
+          camera: 200,
+          os: "Android",
+          inStock: true,
+          rating: 4.3,
+        },
+        {
+          id: 5,
+          brand: "Google",
+          model: "Pixel 8",
+          price: 69999,
+          ram: 8,
+          storage: 128,
+          battery: 4575,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.7,
+        },
+        {
+          id: 6,
+          brand: "Realme",
+          model: "Realme GT 6",
+          price: 35999,
+          ram: 12,
+          storage: 256,
+          battery: 5500,
+          camera: 50,
+          os: "Android",
+          inStock: false,
+          rating: 4.2,
+        },
+        {
+          id: 7,
+          brand: "Motorola",
+          model: "Edge 50 Pro",
+          price: 31999,
+          ram: 8,
+          storage: 256,
+          battery: 4500,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.1,
+        },
+        {
+          id: 8,
+          brand: "Vivo",
+          model: "V30 Pro",
+          price: 42999,
+          ram: 8,
+          storage: 256,
+          battery: 5000,
+          camera: 64,
+          os: "Android",
+          inStock: true,
+          rating: 4.4,
+        },
+        {
+          id: 9,
+          brand: "Oppo",
+          model: "Find X7",
+          price: 59999,
+          ram: 12,
+          storage: 512,
+          battery: 5000,
+          camera: 50,
+          os: "Android",
+          inStock: false,
+          rating: 4.5,
+        },
+        {
+          id: 10,
+          brand: "Nothing",
+          model: "Phone 2",
+          price: 44999,
+          ram: 12,
+          storage: 256,
+          battery: 4700,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.4,
+        },
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+      ];
+
+      let filteredProducs = products.filter(function (element) {
+        return element.brand == "Apple";
+      });
+
+      console.log(filteredProducs);
     </script>
   </body>
 </html>
