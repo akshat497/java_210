@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let products = [
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+        {
+          id: 2,
+          brand: "Apple",
+          model: "iPhone 15",
+          price: 74999,
+          ram: 6,
+          storage: 128,
+          battery: 3349,
+          camera: 48,
+          os: "iOS",
+          inStock: true,
+          rating: 4.8,
+        },
+        {
+          id: 3,
+          brand: "OnePlus",
+          model: "OnePlus 12",
+          price: 64999,
+          ram: 12,
+          storage: 256,
+          battery: 5400,
+          camera: 50,
+          os: "Android",
+          inStock: false,
+          rating: 4.5,
+        },
+        {
+          id: 4,
+          brand: "Xiaomi",
+          model: "Redmi Note 13 Pro",
+          price: 28999,
+          ram: 8,
+          storage: 128,
+          battery: 5100,
+          camera: 200,
+          os: "Android",
+          inStock: true,
+          rating: 4.3,
+        },
+        {
+          id: 5,
+          brand: "Google",
+          model: "Pixel 8",
+          price: 69999,
+          ram: 8,
+          storage: 128,
+          battery: 4575,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.7,
+        },
+        {
+          id: 6,
+          brand: "Realme",
+          model: "Realme GT 6",
+          price: 35999,
+          ram: 12,
+          storage: 256,
+          battery: 5500,
+          camera: 50,
+          os: "Android",
+          inStock: false,
+          rating: 4.2,
+        },
+        {
+          id: 7,
+          brand: "Motorola",
+          model: "Edge 50 Pro",
+          price: 31999,
+          ram: 8,
+          storage: 256,
+          battery: 4500,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.1,
+        },
+        {
+          id: 8,
+          brand: "Vivo",
+          model: "V30 Pro",
+          price: 42999,
+          ram: 8,
+          storage: 256,
+          battery: 5000,
+          camera: 64,
+          os: "Android",
+          inStock: true,
+          rating: 4.4,
+        },
+        {
+          id: 9,
+          brand: "Oppo",
+          model: "Find X7",
+          price: 59999,
+          ram: 12,
+          storage: 512,
+          battery: 5000,
+          camera: 50,
+          os: "Android",
+          inStock: false,
+          rating: 4.5,
+        },
+        {
+          id: 10,
+          brand: "Nothing",
+          model: "Phone 2",
+          price: 44999,
+          ram: 12,
+          storage: 256,
+          battery: 4700,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.4,
+        },
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+        {
+          id: 1,
+          brand: "Samsung",
+          model: "Galaxy S24",
+          price: 79999,
+          ram: 8,
+          storage: 256,
+          battery: 4000,
+          camera: 50,
+          os: "Android",
+          inStock: true,
+          rating: 4.6,
+        },
+      ];
+
+      let userInput = prompt("Enter whatever u want to search for:");
+      let keys = Object.keys(products[0]);
+
+      console.log(products[0]);
+      console.log(keys);
+
+      let filteredproducts = products.filter(function (product) {
+        console.log("product", product);
+        return keys.map(function (key) {
+          return product[key]
+            .toString()
+            .toLowerCase()
+            .includes(userInput.toLowerCase());
+        });
+      });
+
+      let array = ["apple", "banana", "cherry"];
+      let result = array.some(function (element) {
+        return element.includes("an");
+      });
+
+    let numbers = [1, 2, 3, 4, 5];
+    let result2=numbers.some(function(number) {
+      return number == 33;
+
+    })
+    console.log("result2:", result2);
+
+    //   filter(function(){})
+
+      console.log(result);
+      console.log(filteredproducts);
+    </script>
+  </body>
+</html>

@@ -552,7 +552,7 @@
       ];
 
       let filteredProducs = products.filter(function (element) {
-        return element.brand == "Samsung";
+        return element.brand == "Samsung" ;
       });
        let foundProducts = products.find(function (element) {
         return element.brand == "Samsung";
@@ -572,8 +572,8 @@
    
         return accumulator + element.price;
       }, 0);
-      
 
+      let userInput = prompt("Enter a brand to filter by:");
 
 
       console.log(filteredProducs);
