@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 400px;
+            width: 200px;
+            margin: 0 auto;
+            padding: 2%;
+            border: 1px solid black;
+        }
+        label{
+            display: flex;
+          
+            margin-bottom: 10px;
+            justify-content: space-between;
+        }
+        input[type="submit"]{
+            width: inherit;
+            padding: 5px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+         input[type="submit"]:hover{
+            background-color: darkblue;
+        }
+        .edit-btn{
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .save-btn{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer; 
+             border-radius: 10px;
+        }
+        .delete-btn{
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer; 
+             border-radius: 10px;
+        }
+        .input{
+            display: none;
+        }
+        .actions{
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+  
+     <form>
+        <label ><div>Name:</div><input type="text" id="name" name="name" required></label>
+        <label ><div>Email:</div><input type="email" id="email" name="email" required></label>
+        <label ><div>Phone:</div><input type="tel" id="phone" name="phone" required></label>
+        <label ><div>Age:</div><input type="number" id="age" name="age" required></label>
+       <button type="button" onclick="addToTable()">Submit</button>
+        
+    </form>
+
+    <table border="1" style="width: 50%; margin: 20px auto; text-align: center;">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+        <tbody id="table-body">
+            
+        </tbody>
+   
+    <script>
+           let tableBody = document.getElementById("table-body");
+           let students=[]
+       function addToTable(){
+        
+         let nameInput = document.getElementById("name");
+        let emailInput = document.getElementById("email");
+        let phoneInput = document.getElementById("phone");
+        let ageInput = document.getElementById("age");
+       let student={
+        id:students.length+1,
+        name:nameInput.value,
+        email:emailInput.value,
+        phone:phoneInput.value,
+        age:ageInput.value
+       }
+        students.push(student);
+    
+        displayRows();
+       
+        nameInput.value="";
+        emailInput.value="";
+        phoneInput.value="";
+        ageInput.value="";
+        
+       }
+        
+    function displayRows(){
+            tableBody.innerHTML="";
+            
+           
+            students.map(function(student,index){
+             let newRow = document.createElement("tr");
+             newRow.setAttribute("data-index",index);
+             newRow.innerHTML = `
+             <td>
+                <div class="value" id="${student.id}">${student.id}</div>
+                
+                <div class="input"><input type="text" value="${student.id}" id="${student.id}" class="input" onchange="updateStudent(${index}, 'id', this.value)"></div>
+                
+                
+                </td> 
+           
+                <td><div class="value" id="${student.name}">${student.name}</div><div class="input"><input type="text" value="${student.name}" id="${student.name}" class="input" onchange="updateStudent(${index}, 'name', this.value)"></div></td>
+            <td><div class="value" id="${student.email}">${student.email}</div><div class="input"><input type="text" value="${student.email}" id="${student.email}" class="input" onchange="updateStudent(${index}, 'email', this.value)"></div></td>
+            <td><div class="value" id="${student.phone}">${student.phone}</div><div class="input"><input type="text" value="${student.phone}" id="${student.phone}" class="input" onchange="updateStudent(${index}, 'phone', this.value)"></div></td>
+            <td><div class="value" id="${student.age}">${student.age}</div><div class="input"><input type="text" value="${student.age}" id="${student.age}" class="input" onchange="updateStudent(${index}, 'age', this.value)"></div></td>
+            <td>
+                <div class="actions">
+                    <button class="save-btn" style="display:none;" onclick="displayRows()">Save</button>
+                    <button class="edit-btn" onclick="editStudent(${index})">Edit</button>
+                    <button class="delete-btn" onclick="deleteStudent(${index})">Delete</button>
+                </div>
+            </td>
+        `;
+        tableBody.appendChild(newRow);
+        })
+    }
+    function updateStudent(index, key, value){
+        students[index][key]=value;
+        
+       
+    }
+    function deleteStudent(index){
+        students.splice(index,1);
+        displayRows();
+        console.log(students);
+    }
+
+    function editStudent(index){
+        let student = students[index];
+        let row = document.querySelector(`tr[data-index="${index}"]`);
+        console.log(row);
+        let inputs = row.querySelectorAll(".input");
+       let values = row.querySelectorAll(".value");
+       let saveBtn = row.querySelector(".save-btn");
+        values.forEach(function(value){
+            value.style.display="none";
+           
+        });
+        inputs.forEach(function(input){
+            input.style.display="block";
+            
+
+        });
+        let editBtn = row.querySelector(".edit-btn");
+        editBtn.style.display="none";
+        saveBtn.style.display="block";
+
+
+       
+       
+
+      
+    }
+       
+
+    </script>
+    
+</body>
+</html>
