@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //    function first(){
+
+      //     setTimeout(() => {
+      //         debugger
+      //         console.log("first");
+      //     }, 20000);
+      //    }
+
+      //    function second(){
+
+      //     console.log("second");
+      //    }
+
+      //    function third(){
+
+      //     console.log("third");
+      //    }
+      //    first();
+      //    second();
+      //    third();
+
+      //     console.log("first");
+      //     setTimeout(() => {
+      //         console.log("second");
+      //     }, 0);
+      //     console.log("third");
+      //     let resolved=true
+
+      //     const promise = new Promise((resolve, reject) => {
+      //         debugger
+      //         setTimeout(() => {
+      //             if(resolved){
+      //                 resolve("Promise resolved successfully");
+      //             }else{
+      //                 reject("Promise rejected");
+      //             }
+      //         }, 2000);
+
+      // });
+
+      // //promis handling with then and catch
+      // promise.then((message) => {
+      //     debugger
+      //     console.log(message);
+      // }).catch((error) => {
+      //     console.log(error);
+      // }).finally(() => {
+      //     console.log("Promise handling completed");
+      // });
+
+      // console.log("first");
+      // setTimeout(() => {
+      //     console.log("second");
+      // }, 0);
+      // Promise.resolve().then(() => {
+      //     console.log("third");
+      // });
+      // console.log("fourth");
+
+      //   function double(num) {
+      //     return new Promise((resolve) => {
+      //       resolve(num * 2);
+      //     });
+      //   }
+
+      //   double(5)
+      //     .then((data) => {
+      //       throw new Error("Something went wrong");
+      //     })
+      //     .then((result) => {
+      //       console.log("Result:", result);
+      //     })
+      //     .catch((error) => {
+      //       console.error("Error:", error);
+      // });
+
+      //promises all example
+      const promise1 = Promise.resolve(10);
+      const promise2 = Promise.resolve(20);
+      const promise3 = Promise.resolve(30);
+
+      Promise.all([promise1, promise2, promise3])
+        .then((values) => {
+          console.log("All promises resolved:", values);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+      // promise1.then((value1) => {
+      //     console.log("Promise 1 resolved:", value1);
+      //     return promise2;
+      // }).then((value2) => {
+      //     console.log("Promise 2 resolved:", value2);
+      //     return promise3;
+      // }).then((value3) => {
+      //     console.log("Promise 3 resolved:", value3);
+      // }).catch((error) => {
+      //     console.error("Error:", error);
+      // });
+      // promise1.then((value1) => {
+      //     console.log("Promise 1 resolved:", value1);
+      // }).catch((error) => {
+      //     console.error("Error in Promise 1:", error);
+      // });
+
+      const p1 = new Promise((resolve) => {
+        setTimeout(() => resolve("Fast"), 1000);
+      });
+      const p2 = new Promise((resolve) => {
+        setTimeout(() => resolve("Slow"), 3000);
+      });
+      Promise.all([p1, p2]).then(console.log);
+    </script>
+  </body>
+</html>
