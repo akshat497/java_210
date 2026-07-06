@@ -1,11 +1,12 @@
 import { useContext } from "react"
-import { userContext } from "../context/Context"
+import { userContext } from "../App"
+
 
 
 export  function Footer() {
 
-  let user=useContext(userContext)
+  let {dispatch}=useContext(userContext)
   return (
-    <div>Footer {user.name}{user.age}</div>
+    <div><button onClick={()=>{dispatch({type:"increment"})}}>+</button></div>
   )
 }

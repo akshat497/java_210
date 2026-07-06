@@ -287,19 +287,96 @@
 //     </>
 //   );
 // }
-import React from 'react'
+import React, { useContext, useState } from "react";
+import { userContext } from "../App";
 
 export default function Students() {
-    let fruits=["apple","banana","guavava","pineapple","mango","grapes"]
+  let { users, books,issueBook } = useContext(userContext);
+  console.log(users);
+  const [selectedUser, setselectedUser] = useState(users[0].id)
+  const [selectedBook, setselectedBook] = useState(books[0].id)
+  let userkeys = Object.keys(users[0]);
+  let booksKeys = Object.keys(books[0]);
+  console.log(userkeys);
+  // let fruits=["apple","banana","guavava","pineapple","mango","grapes"]
   return (
     <>
-        {
+      <h1>Issue book</h1>
+      <select onChange={(e)=>{setselectedUser(e.target.value)}} value={selectedUser}>
+        {users.map((user) => (
+          <option value={user.id}>{user.name}</option>
+        ))}
+      </select>
+      <select onChange={(e)=>{setselectedBook(e.target.value)}} value={selectedBook}>
+        {books.map((book) => (
+          <option value={book.id}>{book.title}</option>
+        ))}
+      </select>
+
+      <button onClick={()=>{issueBook(selectedBook,selectedUser)}}>issue book</button>
+
+      <table border={1}>
+        <thead>
+          {userkeys.map((key) => (
+            <th>{key}</th>
+          ))}
+        </thead>
+        <tbody>
+          {users.map((user) => {
+            return (
+              <tr>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.phone}</td>
+                <td>{user.membershipType}</td>
+                <td>{books.map((book)=>{
+                    
+
+                    return user.borrowedBooks.map((bb)=>{
+                        if(bb==book.id){
+                            console.log(book.title)
+                            return " " +book.title+" " +" ,"
+                        }
+                     })
+                })}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+
+
+          <table border={1}>
+        <thead>
+          {booksKeys.map((key) => (
+            <th>{key}</th>
+          ))}
+        </thead>
+         
+        <tbody>
+          {books.map((book) => {
+            return (
+              <tr>
+                <td>{book.id}</td>
+                <td>{book.title}</td>
+                <td>{book.author}</td>
+                <td>{book.genre}</td>
+                <td>{book.publishedYear}</td>
+                <td>{book.availableCopies}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+
+      {/* {
             fruits.map(function(fruit){
                 return <div key={fruit}>
                     {fruit}
                 </div>
             })
-        }
+        } */}
     </>
-  )
+  );
 }
