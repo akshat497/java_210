@@ -287,20 +287,51 @@
 //     </>
 //   );
 // }
-import React, { useContext, useState } from "react";
+import React, { useContext, useState ,useEffect} from "react";
 import { userContext } from "../App";
 
 export default function Students() {
   let { users, books,issueBook } = useContext(userContext);
-  console.log(users);
+  
   const [selectedUser, setselectedUser] = useState(users[0].id)
   const [selectedBook, setselectedBook] = useState(books[0].id)
+  const [imageData, setImageData] = useState([])
+  const [loading, setloading] = useState(false)
   let userkeys = Object.keys(users[0]);
   let booksKeys = Object.keys(books[0]);
-  console.log(userkeys);
+   let array=[1,2,3,4,5,6,2,3,4,1]
+   console.time("array",array)
+   let data=array.filter(function(value){
+
+    return value ===2
+   })
+   console.timeEnd("array",array)
+
+   console.log("data",data)
+  // async function images() {
+  //   try {
+  //     setloading(true)
+  //     let resp=await fetch("https://jsonplaceholder.typicode.com/photos",{
+  //       method:"GET"
+  //     });
+  //     // let resp= axios.get("https://jsonplaceholder.typicode.com/photos")
+  //     let data=await resp.json();
+  //     console.log("response data",data)
+  //     setImageData(data)
+  //     setloading(false)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+
+  // }
+  // useEffect(()=>{
+  //   images()
+  // },[])
+
   // let fruits=["apple","banana","guavava","pineapple","mango","grapes"]
   return (
     <>
+    {loading && <h1>loading...</h1>}
       <h1>Issue book</h1>
       <select onChange={(e)=>{setselectedUser(e.target.value)}} value={selectedUser}>
         {users.map((user) => (
@@ -364,6 +395,25 @@ export default function Students() {
                 <td>{book.genre}</td>
                 <td>{book.publishedYear}</td>
                 <td>{book.availableCopies}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+
+      <table border={1}>
+        <thead>
+          <th>id</th>
+          <th>title</th>
+          <th>image</th>
+        </thead>
+        <tbody>
+          {imageData.map((image) => {
+            return (
+              <tr>
+                <td>{image.id}</td>
+                <td>{image.title}</td>
+                <td><img src={image.thumbnailUrl} alt={image.title}/></td>
               </tr>
             );
           })}
