@@ -17,7 +17,13 @@
             }
             .shape {
                 border-radius: 0; /* Square */
+                animation: rotate 2s linear infinite;
             }
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            
 
         }
         @media(min-width:601px) and (max-width:900px){
@@ -27,6 +33,11 @@
              .shape {
                width: 150px;
                height: 100px; /* Rectangle */
+               animation: bounce 2s linear infinite;
+            }
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-20px); }
             }
         }
         @media(min-width:901px){
@@ -34,7 +45,12 @@
                 background-color: blue;
             }
              .shape {
-                border-radius: 50%; /* Square */
+                border-radius: 50%; /* Circle */
+                animation: spin 2s linear infinite;
+            }
+            @keyframes spin {
+                from { transform: translatex(0px); }
+                to { transform: translatex(200px); }
             }
         }
         
@@ -43,5 +59,7 @@
 <body>
     make a div and chage its shape according to the screen size using media queries. For example, you can create a div that is a square on small screens, a rectangle on medium screens, and a circle on large screens.
     <div class="shape"></div>
+    
+    make a div and chage its animation according to the screen size using media queries. For example, you can create a div that has a different animation on small screens, a different animation on medium screens, and a different animation on large screens.
 </body>
 </html>
