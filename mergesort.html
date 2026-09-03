@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function mergeSort(arr) {
+        debugger
+        // Base case
+        if (arr.length <= 1) {
+            debugger
+          return arr;
+        }
+
+        // Find middle
+        debugger
+        let mid = Math.floor(arr.length / 2);
+   debugger
+        // Divide array into two halves
+        let left = arr.slice(0, mid); //38, 27, 43, 3,
+       debugger
+        let right = arr.slice(mid); //9, 82, 10
+            
+        // Recursively sort both halves
+        debugger
+        left = mergeSort(left); //38, 27, 43, 3
+       debugger
+        right = mergeSort(right);
+
+        // Merge the sorted halves
+        return merge(left, right);
+      }
+
+      function merge(left, right) {
+        debugger;
+        let result = [];
+        let i = 0;
+        let j = 0;
+        debugger;
+
+        // Compare elements from left and right
+        while (i < left.length && j < right.length) {
+            debugger;
+          if (left[i] < right[j]) {
+            debugger;
+            result.push(left[i]);
+            i++;
+          } else {
+            debugger;
+            result.push(right[j]);
+            j++;
+          }
+        }
+
+        // Add remaining elements of left
+        while (i < left.length) {
+            debugger;
+          result.push(left[i]);
+          i++;
+        }
+
+        // Add remaining elements of right
+        while (j < right.length) {
+            debugger
+          result.push(right[j]);
+          j++;
+        }
+
+        return result;
+      }
+
+      let arr = [38, 27, 43, 3, 9, 82, 10];
+
+      console.log("Original:", arr);
+      console.log("Sorted:", mergeSort(arr));
+    </script>
+  </head>
+  <body></body>
+</html>
