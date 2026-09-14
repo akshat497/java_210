@@ -1,20 +1,38 @@
 public class linearSearch {
+    
     public static void main(String[] args) {
-        class Student {
+        class bankBalance {
 
-            void display(String name, int age) {
-                System.out.println("Hello" + " " + name + " " + "your age is" + " " + age);
-
-            }
-
-            void Show(String name, int age) {
-                this.display(name, age);
-            }
+            private double balance;
         }
-        Student obj1 = new Student();
-        Student obj2 = new Student();
-        obj1.Show("Akshat", 21);
-        obj2.Show("Sourav", 25);
+
+        bankBalance obj3 = new bankBalance();
+        bankBalance obj4 = new bankBalance();
+
+        obj3.balance = 1000;
+        obj4.balance = 2000;
+
+        System.out.println("Balance of obj3: " + obj3.balance);
+        System.out.println("Balance of obj4: " + obj4.balance);
+        
+        // class Student {
+
+        // void display(String name, int age) {
+        // System.out.println("Hello" + " " + name + " " + "your age is" + " " + age);
+
+        // }
+
+        // void Show(String name, int age) {
+        // this.display(name, age);
+        // }
+        // }
+        // Student obj1 = new Student();
+        // Student obj2 = new Student();
+        // obj1.Show("Akshat", 21);
+        // obj2.Show("Sourav", 25);
+
+        
+
         // int arr[]={11,12,13,14,15,16,17,18,19,20};
         // int left=0;
         // int right=arr.length-1;
