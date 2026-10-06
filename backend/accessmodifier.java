@@ -14,11 +14,11 @@
 
 //     }
 // }
-class bankBalance{
-    private double balance=2000;
-    private double accountNumber= 123945;
-    private String accountHolderName= "John Doe";
-    private int pin=1234;
+class bankBalance {
+    private double balance = 2000;
+    private double accountNumber = 123945;
+    private String accountHolderName = "John Doe";
+    private int pin = 1234;
 
     int addbalance(double accountNumber, double amount, int pin) {
         // Logic to add balance to the account
@@ -31,7 +31,8 @@ class bankBalance{
         }
 
     }
-    int widrawbalance(double accountNumber, double amount, int pin ) {
+
+    int widrawbalance(double accountNumber, double amount, int pin) {
         // Logic to withdraw balance from the account
         if (this.accountNumber == accountNumber && this.pin == pin) { // Example account number and PIN check
             if (balance >= amount) {
@@ -47,6 +48,7 @@ class bankBalance{
         }
 
     }
+
     int getbalance(double accountNumber, int pin) {
         // Logic to get balance of the account
         if (this.accountNumber == accountNumber && this.pin == pin) { // Example account number and PIN check
@@ -57,6 +59,7 @@ class bankBalance{
         }
 
     }
+
     String getaccountHolderName(double accountNumber, int pin) {
         // Logic to get account holder name
         if (this.accountNumber == accountNumber && this.pin == pin) { // Example account number and PIN check
@@ -68,12 +71,70 @@ class bankBalance{
 
     }
 }
+
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+
+    void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+}
+
+class Dog extends Animal {
+     int age = 5;
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+class Cat extends Animal{
+    void meow(){
+        System.out.println("Cat is meowing" );
+       
+    }
+}
+class constructor{
+    int age=10;
+    constructor(){
+        System.out.println("inside class constructor");
+    }
+    void display(){
+        System.out.println("inside class constructor display method");
+    }
+}
+class newContrsuctor extends constructor{
+  
+    newContrsuctor(){
+       
+        System.out.println("inside class new constructor");
+     
+    }
+}
+class kanika extends newContrsuctor{
+
+    kanika(){
+        super();
+        System.out.println("inside class kanika constructor"+age);
+    }
+}
+
 public class accessmodifier {
 
     public static void main(String[] args) {
         bankBalance obj3 = new bankBalance();
-        // System.out.println("Balance of obj3: " + obj3.addbalance(123945, 1000, 1234)); // Assuming 1234 is the correct PIN
-        System.out.println("Balance of obj3 after withdrawal: " + obj3.widrawbalance(123945, 500, 1234)); // Assuming 1234 is the correct PIN
+      
+        Cat C = new Cat();
+        kanika kanika = new kanika();
+      
+        C.meow();
+   
+        C.eat();
+        // System.out.println("Balance of obj3: " + obj3.addbalance(123945, 1000,
+        // 1234)); // Assuming 1234 is the correct PIN
+        System.out.println("Balance of obj3 after withdrawal: " + obj3.widrawbalance(123945, 500, 1234)); // Assuming
+                                                                                                          // 1234 is the
+                                                                                                          // correct PIN
         // bankBalance obj3 = new bankBalance();
         // System.out.println("Balance of obj3: " + obj3.addbalance(123945, 1000));
 
