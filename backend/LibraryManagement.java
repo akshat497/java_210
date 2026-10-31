@@ -1,7 +1,10 @@
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LibraryManagement {
+
+    
     static class Book {
         private int bookId;
         private String name;
@@ -40,7 +43,7 @@ public class LibraryManagement {
             isIssued = false;
         }
 
-        public void displayBooks() {
+        public void displayBook() {
             System.out.println("BookId" + bookId);
             System.out.println("BookName" + name);
             System.out.println("AuthorName" + authorName);
@@ -56,7 +59,23 @@ public class LibraryManagement {
         }
 
     }
+static class Library{
+        private ArrayList<Book> books=new ArrayList<>();
+        public void addBook(Book book){
+            books.add(book);
+            System.out.println("Book added successfully");
+        }
+        public void displayBooks(){
+            if(books.isEmpty()){
+                System.out.println("no Books");
+                return;
 
+            }
+            for (Book book:books){
+                book.displayBook();
+            }
+        }
+    }
     public static void main(String[] args) {
         // to add a book
         // to delete a book
@@ -67,6 +86,7 @@ public class LibraryManagement {
         // available books
         // exit
         Scanner sc = new Scanner(System.in);
+        Library library=new Library();
         int choice;
 
        do{
@@ -91,11 +111,14 @@ public class LibraryManagement {
                 sc.nextLine();
                 System.out.println("Enter Book Name");
                 String name = sc.nextLine();
-                System.out.println("Enter Book Name");
+                System.out.println("Enter Author Name");
                 String AuthorName = sc.nextLine();
                 Book book=new Book(id,name,AuthorName);
+                library.addBook(book);
                 break;
-
+            case 2:
+                library.displayBooks();
+            break;
             default:
                 break;
         }
