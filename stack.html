@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      debugger;
+      function Stack() {
+
+        console.log("Stack function called");
+        
+  stack1()
+        function stack1() {
+            stack2()
+
+          debugger;
+
+          console.log("stack1 function called");
+
+          function stack2() {
+
+            debugger;
+            console.log("stack2 function called");
+
+          }
+        }
+      }
+
+      Stack();
+    </script>
+  </body>
+</html>

@@ -118,6 +118,44 @@ class kanika extends newContrsuctor{
         System.out.println("inside class kanika constructor"+age);
     }
 }
+class Animall {
+
+void sound() {
+System.out.println("Animal makes sound");
+}
+
+}
+class Dogi extends Animall {
+ @Override 
+   void sound() {
+     System.out.println("Dog barks"); // Call the superclass method
+    }
+
+}
+
+class cats extends Animall {
+    @Override
+    void sound() {
+        System.out.println("Cat meows"); // Call the superclass method
+    }
+
+}
+
+class a{
+   void eat(){
+        System.out.println("eat new animal");
+    }
+}
+class b extends a{
+    void bark(){
+        System.out.println("bark");
+    }
+}
+class c extends a{
+    void meow(){
+        System.out.println("meow");
+    }
+}
 
 public class accessmodifier {
 
@@ -126,10 +164,16 @@ public class accessmodifier {
       
         Cat C = new Cat();
         kanika kanika = new kanika();
+        Dogi dog = new Dogi();
+        dog.sound();
       
         C.meow();
    
         C.eat();
+        a animal=new b();
+   
+      
+       
         // System.out.println("Balance of obj3: " + obj3.addbalance(123945, 1000,
         // 1234)); // Assuming 1234 is the correct PIN
         System.out.println("Balance of obj3 after withdrawal: " + obj3.widrawbalance(123945, 500, 1234)); // Assuming

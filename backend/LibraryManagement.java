@@ -1,0 +1,106 @@
+
+import java.util.Scanner;
+
+public class LibraryManagement {
+    static class Book {
+        private int bookId;
+        private String name;
+        private String authorName;
+        private boolean isIssued;
+
+        public Book(int bookId, String name, String authorName) {
+            this.bookId = bookId;
+            this.name = name;
+            this.authorName = authorName;
+            this.isIssued = false;
+        }
+
+        public int getBookId() {
+            return bookId;
+        }
+
+        public String getBookName() {
+            return name;
+        }
+
+        public String getAuthorName() {
+            return authorName;
+        }
+
+        public boolean getissued() {
+            return isIssued;
+        }
+
+        // issue books
+        public void issueBook() {
+            isIssued = true;
+        }
+
+        public void returnBook() {
+            isIssued = false;
+        }
+
+        public void displayBooks() {
+            System.out.println("BookId" + bookId);
+            System.out.println("BookName" + name);
+            System.out.println("AuthorName" + authorName);
+
+            if (isIssued) {
+                System.out.println("Status: issued");
+
+            } else {
+                System.out.println("Status: Available");
+            }
+            System.out.println("==================================");
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+        // to add a book
+        // to delete a book
+        // display all books
+        // search book
+        // return book
+        // total books
+        // available books
+        // exit
+        Scanner sc = new Scanner(System.in);
+        int choice;
+
+       do{
+         System.out.println("1. Add Book");
+        System.out.println("2. Display All Books");
+        System.out.println("3. Search Book");
+        System.out.println("4. Issue Book");
+        System.out.println("5. Return Book");
+        System.out.println("6. Delete Book");
+        System.out.println("7. Available Book");
+        System.out.println("8. Total Book");
+        System.out.println("9. Exit");
+
+        System.out.println("Enter your choice");
+        choice = sc.nextInt();
+        sc.nextLine();
+
+        switch (choice) {
+            case 1:
+                System.out.println("Enter BookId");
+                int id = sc.nextInt();
+                sc.nextLine();
+                System.out.println("Enter Book Name");
+                String name = sc.nextLine();
+                System.out.println("Enter Book Name");
+                String AuthorName = sc.nextLine();
+                Book book=new Book(id,name,AuthorName);
+                break;
+
+            default:
+                break;
+        }
+       }while(choice!=9);
+
+    }
+
+}
