@@ -77,21 +77,23 @@ public class LibraryManagement {
                 book.displayBook();
             }
         }
-        public void searchBook(int Bookid){
-            for(Book book:books){
-                if(book.getBookId() == Bookid){
+
+        public void searchBook(int Bookid) {
+            for (Book book : books) {
+                if (book.getBookId() == Bookid) {
                     book.displayBook();
                     return;
                 }
             }
             System.out.println("Book not found");
         }
-        public void issueBook(int IssueId){
-            for(Book book:books){
-                if(book.getBookId() == IssueId){
-                    if(book.getissued()){
+
+        public void issueBook(int IssueId) {
+            for (Book book : books) {
+                if (book.getBookId() == IssueId) {
+                    if (book.getissued()) {
                         System.out.println("Book is already issued");
-                    }else{
+                    } else {
                         book.issueBook();
                         System.out.println("Book issued successfully");
                     }
@@ -99,6 +101,56 @@ public class LibraryManagement {
                 }
             }
             System.out.println("Book not found");
+        }
+
+        public void returnBook(int returnBookid) {
+            for (Book book : books) {
+                if (book.getBookId() == returnBookid) {
+                    if (book.getissued()) {
+                        book.returnBook();
+                        System.out.println("Book returned successfully");
+                    } else {
+                        System.out.println("Book is not issued");
+                    }
+                    return;
+                }
+            }
+            System.out.println("Book not found");
+
+        }
+
+        public void totalBooks() {
+
+            System.out.println("Total books are " + books.size());
+        }
+
+        public void deleteBook(int bookId) {
+
+            for (Book book : books) {
+                if (book.getBookId() == bookId) {
+                    if (book.isIssued) {
+                        System.out.println("First return the book ");
+                        return;
+                    }
+                    books.remove(book);
+                    System.out.println("book deleted successfully ");
+
+                }
+
+            }
+
+        }
+
+        public void availableBooks() {
+            System.out.println("Available boooks are");
+            System.out.println("=====================");
+            for (Book book : books) {
+                if (!book.isIssued) {
+
+                    book.displayBook();
+                }
+
+            }
         }
     }
 
@@ -154,6 +206,25 @@ public class LibraryManagement {
                     System.out.println("Enter BookId to issue");
                     int issueId = sc.nextInt();
                     library.issueBook(issueId);
+                    break;
+
+                case 5:
+                    System.out.println("Enter BookId to return");
+                    int returnId = sc.nextInt();
+                    library.returnBook(returnId);
+                    break;
+
+                case 6:
+                    System.out.println("Enter BookId to delete");
+                    int BookId = sc.nextInt();
+                    library.deleteBook(BookId);
+                    break;
+                case 7:
+                    library.availableBooks();
+                    break;
+
+                case 8:
+                    library.totalBooks();
                     break;
 
                 default:
